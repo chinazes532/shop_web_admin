@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Редактирование процента{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Редактировать процент</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="count">Введите процент:</label>
+            <textarea class="form-control" id="count" name="count" rows="10">{{ percent.count }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+        <a href="{{ url_for('percents') }}" class="btn btn-secondary mt-3">Назад к списку процентов</a>
+    </form>
+</div>
+{% endblock %}

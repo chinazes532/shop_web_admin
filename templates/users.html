@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Пользователи бота{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Список пользователей</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Telegram ID</th>
+                <th>Имя</th>
+                <th>Реферальная ссылка</th>
+                <th>Кто пригласил</th>
+                <th>Кол-во приглашенных</th>
+                <th>Баланс</th>
+                <th>Дата регистрации</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.tg_id }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.ref_link }}</td>
+                <td>{{ user.invited_by if user.invited_by is not none else 'отсутствует' }}</td>
+                <td>{{ user.ref_count }}</td>
+                <td>{{ user.balance }}</td>
+                <td>{{ user.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

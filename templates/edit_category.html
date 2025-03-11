@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Редактирование категории{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Редактировать категорию</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="category">Введите название:</label>
+            <textarea class="form-control" id="category" name="name" rows="10">{{ category.name }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+        <a href="{{ url_for('categories') }}" class="btn btn-secondary mt-3">Назад к списку категорий</a>
+    </form>
+</div>
+{% endblock %}

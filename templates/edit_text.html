@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Редактирование текста{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Редактировать текст</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="text">Введите текст:</label>
+            <textarea class="form-control" id="text" name="text" rows="10">{{ text.text }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+        <a href="{{ url_for('texts') }}" class="btn btn-secondary mt-3">Назад к списку текстов</a>
+    </form>
+</div>
+{% endblock %}

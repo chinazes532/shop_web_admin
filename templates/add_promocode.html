@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить промокод{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="mb-4">Добавить промокод</h2>
+    <form method="POST" action="{{ url_for('add_promocode') }}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Название промокода</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="percent" class="form-label">Скидка (%)</label>
+            <input type="number" class="form-control" id="percent" name="percent" min="0" max="100" required>
+        </div>
+        <div class="mb-3">
+            <label for="count" class="form-label">Количество использований</label>
+            <input type="number" class="form-control" id="count" name="count" min="1" required>
+        </div>
+        <div class="mb-3">
+            <label for="end_date" class="form-label">Дата окончания</label>
+            <input type="date" class="form-control" id="end_date" name="end_date" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить промокод</button>
+        <a href="{{ url_for('promo_codes_func') }}" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+{% endblock %}

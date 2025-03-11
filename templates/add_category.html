@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить категорию{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Добавить категорию</h1>
+
+    <form action="{{ url_for('add_category') }}" method="POST">
+        <div class="mb-3">
+            <label for="categoryName" class="form-label">Название категории</label>
+            <input type="text" class="form-control" id="categoryName" name="name" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить категорию</button>
+        <a href="{{ url_for('categories') }}" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+{% endblock %}
